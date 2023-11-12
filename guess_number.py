@@ -15,9 +15,12 @@ random_num = random.randint(min, max)
 left = 5
 
 while left > 0:
-    user_input = int(input("数字を予測してください。制限回数は５回です。\n"))
+    user_input = int(input(f"数字を予測してください。制限回数は{left}回です。\n"))
     if user_input != random_num:
-        print("惜しい！")
+        if(left == 1):
+            print("失敗！やり直してね")
+        else:
+            print("惜しい！")
         left -= 1
     else:
         print("正解です！")
